@@ -1,4 +1,4 @@
-// Import orm.js into user.js
+// Import orm.js into burger.js
 var orm = require("../config/orm.js");
 // The code that will call the ORM functions using burger specific input for the ORM.
 var burger = 
@@ -12,7 +12,7 @@ var burger =
                });
            },
 
-         // Add a new user to the db.
+         // Add a new burger to the db.
          insertOne: function(cols, vals, cb) 
            {
              orm.insertOne("users", cols, vals, function(res) 
@@ -30,7 +30,7 @@ var burger =
                 });
             },
 
-         // Delete a user from the db.
+         // Delete a burger from the db.
          deleteOne: function(condition, cb) 
            {
              orm.deleteOne("users", condition, function(res) 
@@ -40,5 +40,5 @@ var burger =
            }
     };
 
-// Export at the end of the users.js file.
-module.exports = users;
+// Export at the end of the burger.js file.
+module.exports = likes;

@@ -1,18 +1,21 @@
 // Dependencies
+
+console.log("2.) - Reggie");
+
 var express = require("express");
 // Import the model to use its db functions for burger.js
-var users = require("../models/burger.js");
+var users = require("../models/users.js");
 
 // Create the router for the app, and export the router at the end of your file.
 var router = express.Router();
 // Create routes and set up logic where required.
 router.get("/", function (req, res) 
  {
-     burger.selectAll(function(data) 
+     users.selectAll(function(data) 
      {
         var hbsObject = 
         {
-            burgers: data
+            users: data
         };
         console.log(hbsObject);
         res.render("index", hbsObject);
@@ -20,14 +23,12 @@ router.get("/", function (req, res)
  });
 
 // Add new burger to the db.
-router.post("/api/burgers", function (req, res)
+router.post("/api/users", function (req, res)
  {
-    burger.insertOne
-    ( 
-        [ "burger_name", "devoured"
+    emptypantry.users( 
+        [ "userEmail"
         ], 
-        [ req.body.burger_name, 
-          req.body.devoured
+        [ req.body.userEmail, 
         ],        
         function(result) 
            {
@@ -37,12 +38,12 @@ router.post("/api/burgers", function (req, res)
  });
 
 // Set burger devoured status to true.
-router.put("/api/burgers/:id", function(req, res) 
+router.put("/api/users/:id", function(req, res) 
   {
       var condition = "id = " + req.params.id;
       console.log("condition", condition);
 
-       burger.updateOne({ devoured: req.body.devoured }, condition, function(result) 
+       users.updateOne({ users: req.body.users }, condition, function(result) 
          {
             if (result.changedRows === 0)
                {
@@ -57,7 +58,7 @@ router.put("/api/burgers/:id", function(req, res)
   });
 
 // Delete burger from db.
-router.delete("/api/burgers/:id", function(req, res) 
+router.delete("/api/users/:id", function(req, res) 
   {
      var condition = "id = " + req.params.id;
      console.log("condition", condition);

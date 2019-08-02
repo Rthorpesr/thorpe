@@ -32,7 +32,7 @@ function objToSql(ob) {
 }
 
 var orm = {
-    // Display all burgers in the db.
+    // Display all users in the db.
     selectAll: function(table, cb) {
         var queryString = "SELECT * FROM " + table + ";";
 

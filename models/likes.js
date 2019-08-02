@@ -3,10 +3,10 @@ var orm = require("../config/orm.js");
 // The code that will call the ORM functions using burger specific input for the ORM.
 var burger = 
     {
-         // Display all burgers in the db.
+         // Display all users in the db.
          selectAll: function(cb) 
            {
-             orm.selectAll("burgers", function(res) 
+             orm.selectAll("users", function(res) 
                {
                  cb(res);
                });
@@ -15,7 +15,7 @@ var burger =
          // Add a new burger to the db.
          insertOne: function(cols, vals, cb) 
            {
-             orm.insertOne("burgers", cols, vals, function(res) 
+             orm.insertOne("users", cols, vals, function(res) 
                {
                  cb(res);
                });
@@ -24,7 +24,7 @@ var burger =
          // Change the devoured status to true.
          updateOne: function(objColVals, condition, cb)
            {
-              orm.updateOne("burgers", objColVals, condition, function(res) 
+              orm.updateOne("users", objColVals, condition, function(res) 
                 {
                    cb(res);
                 });
@@ -33,7 +33,7 @@ var burger =
          // Delete a burger from the db.
          deleteOne: function(condition, cb) 
            {
-             orm.deleteOne("burgers", condition, function(res) 
+             orm.deleteOne("users", condition, function(res) 
                {
                  cb(res);
                });
