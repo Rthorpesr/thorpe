@@ -1,21 +1,21 @@
-// Import orm.js into burger.js
+// Import orm.js into saveforlater.js
 var orm = require("../config/orm.js");
-// The code that will call the ORM functions using burger specific input for the ORM.
-var burger = 
+// The code that will call the ORM functions using saveforlater specific input for the ORM.
+var saveforlater = 
     {
-         // Display all users in the db.
+         // Display all saveforlater in the db.
          selectAll: function(cb) 
            {
-             orm.selectAll("users", function(res) 
+             orm.selectAll("saveforlater", function(res) 
                {
                  cb(res);
                });
            },
 
-         // Add a new burger to the db.
+         // Add a new saveforlater to the db.
          insertOne: function(cols, vals, cb) 
            {
-             orm.insertOne("users", cols, vals, function(res) 
+             orm.insertOne("saveforlater", cols, vals, function(res) 
                {
                  cb(res);
                });
@@ -24,21 +24,21 @@ var burger =
          // Change the devoured status to true.
          updateOne: function(objColVals, condition, cb)
            {
-              orm.updateOne("users", objColVals, condition, function(res) 
+              orm.updateOne("saveforlater", objColVals, condition, function(res) 
                 {
                    cb(res);
                 });
             },
 
-         // Delete a burger from the db.
+         // Delete a saveforlater from the db.
          deleteOne: function(condition, cb) 
            {
-             orm.deleteOne("users", condition, function(res) 
+             orm.deleteOne("saveforlater", condition, function(res) 
                {
                  cb(res);
                });
            }
     };
 
-// Export at the end of the burger.js file.
-module.exports = likes;
+// Export at the end of the saveforlater.js file.
+module.exports = saveforlater;

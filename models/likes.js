@@ -1,21 +1,21 @@
-// Import orm.js into burger.js
+// Import orm.js into likes.js
 var orm = require("../config/orm.js");
-// The code that will call the ORM functions using burger specific input for the ORM.
-var burger = 
+// The code that will call the ORM functions using likes specific input for the ORM.
+var likes = 
     {
-         // Display all users in the db.
+         // Display all likes in the db.
          selectAll: function(cb) 
            {
-             orm.selectAll("users", function(res) 
+             orm.selectAll("likes", function(res) 
                {
                  cb(res);
                });
            },
 
-         // Add a new burger to the db.
+         // Add a new likes to the db.
          insertOne: function(cols, vals, cb) 
            {
-             orm.insertOne("users", cols, vals, function(res) 
+             orm.insertOne("likes", cols, vals, function(res) 
                {
                  cb(res);
                });
@@ -24,21 +24,21 @@ var burger =
          // Change the devoured status to true.
          updateOne: function(objColVals, condition, cb)
            {
-              orm.updateOne("users", objColVals, condition, function(res) 
+              orm.updateOne("likes", objColVals, condition, function(res) 
                 {
                    cb(res);
                 });
             },
 
-         // Delete a burger from the db.
+         // Delete a likes from the db.
          deleteOne: function(condition, cb) 
            {
-             orm.deleteOne("users", condition, function(res) 
+             orm.deleteOne("likes", condition, function(res) 
                {
                  cb(res);
                });
            }
     };
 
-// Export at the end of the burger.js file.
+// Export at the end of the likes.js file.
 module.exports = likes;
