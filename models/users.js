@@ -1,7 +1,7 @@
-// Import orm.js into user.js
+// Import orm.js into users.js
 var orm = require("../config/orm.js");
 // The code that will call the ORM functions using burger specific input for the ORM.
-var burger = 
+var users = 
     {
          // Display all users in the db.
          selectAll: function(cb) 
@@ -41,4 +41,5 @@ var burger =
     };
 
 // Export at the end of the users.js file.
+console.log("5.) - Reggie");
 module.exports = users;

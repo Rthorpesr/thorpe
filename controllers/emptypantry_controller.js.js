@@ -1,7 +1,6 @@
 // Dependencies
 
 console.log("2.) - Reggie");
-
 var express = require("express");
 // Import the model to use its db functions for burger.js
 var users = require("../models/users.js");
